@@ -1,2 +1,2 @@
 # milk
-click to website https://github.com/happy-krishna/milk.git
+click to website https://happy-krishna.github.io/milk/
