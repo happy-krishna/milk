@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+        <title>Milk Remainder</title>
+        <link rel="stylesheet" href="milkstyle.css">
+        <link rel="icon" type="image/x-icon" href="cow.ico">
+    </head>
+    <body>
+        <div class="container">
+            <form class="form" name="google" method="POST">
+                <h2>Milk Update</h2>
+                <label>Mark Date : </label>
+                <input type="date" name="Enter-date" class="box" placeholder="Enter-date">
+                <label>Enter Milk in Liters: </label>
+                <input type="text" name="Milk in L" class="box" placeholder="Enter milk in L">
+                <label>Enter Cost of Milk: </label>
+                <input type="text" name="Cost" class="box" placeholder="Enter Cost">
+                <input type="submit" value="Submit" id="submit">
+            </form>
+            <div class="side">
+                <img src="milkman.jpg" alt="milkman">
+            </div>
+        </div>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxsdNoE97t11LNMJUZRb7QzvpCblvzJTCoVteEeoZMuLOdwqxvHAlDL8tR7cIxOnEDXcA/exec'
+			const form = document.forms['google']
+			form.addEventListener('submit', e => {
+			  e.preventDefault()
+			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(response => alert("Thank you! your data is submitted successfully." ))
+				.catch(error => console.error('Error!', error.message))
+			})
+        </script>
+    </body>
+</html>
